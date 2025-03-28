@@ -1,4 +1,0 @@
-echo ".DS_Store" >> .gitignore
-git add .gitignore
-git commit -m "Menambahkan .DS_Store ke .gitignore"
-git push origin maingit add ..DS_Store

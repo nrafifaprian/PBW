@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Huruf Mutu</title>
+    <style>
+        .container {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .error {
+            color: #721c24;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+        }
+
+        .grade {
+            font-weight: bold;
+            color: #155724;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Cek Huruf Mutu</h2>
+        <div class="input-group">
+            <label for="nim">NIM:</label>
+            <input type="text" id="nim" placeholder="Masukkan NIM">
+        </div>
+        <div class="input-group">
+            <label for="nilai">Nilai Mata Kuliah:</label>
+            <input type="number" id="nilai" placeholder="Masukkan nilai (0-100)">
+        </div>
+        <button type="button" onclick="cekHurufMutu()">Cek Nilai</button>
+        <div id="result"></div>
+    </div>
+
+    <footer class="page-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Naufal Rafif Aprian - 2310631170107 - 4E - Pemrograman Berbasis Web</p>
+        </div>
+    </footer>
+
+    <style>
+        .page-footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .footer-content p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+    </style>
+
+    <script>
+        function cekHurufMutu() {
+            const nim = document.getElementById('nim').value;
+            const nilai = parseFloat(document.getElementById('nilai').value);
+            const resultDiv = document.getElementById('result');
+
+            if (isNaN(nilai) || nilai < 0 || nilai > 100) {
+                resultDiv.innerHTML = '<p class="error">Nilai tidak valid!</p>';
+                return;
+            }
+
+            let hurufMutu;
+            if (nilai >= 80) {
+                hurufMutu = 'A';
+            } else if (nilai >= 70) {
+                hurufMutu = 'B';
+            } else if (nilai >= 60) {
+                hurufMutu = 'C';
+            } else if (nilai >= 50) {
+                hurufMutu = 'D';
+            } else {
+                hurufMutu = 'E';
+            }
+
+            resultDiv.innerHTML = `
+                <p>
+                    NIM: ${nim}<br>
+                    Nilai: ${nilai}<br>
+                    Huruf Mutu: <span class="grade">${hurufMutu}</span>
+                </p>
+            `;
+        }
+    </script>
+</body>
+</html>
