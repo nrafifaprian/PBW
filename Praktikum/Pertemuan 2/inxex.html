@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 2</title>
+</head>
+<body>
+<form action="" method=""></form>
+
+<input type="text" name="username">
+
+<!-- textarea -->
+<textarea
+  name="komentar"
+  rows="4"
+  cols="50"
+  placehorder="Masukkan komentar Anda"
+></textarea>
+
+<!-- dropdown -->
+<select name="pilihan">
+  \
+  <option value="1">Pilihan1</option>
+  <option value="2">Pilihan2</option>
+</select>
+
+<!-- radiobutton -->
+<label><input type="radio" name="gender" value="male" />Laki Laki</label>
+<label><input type="radio" name="gender" value="female" />Perempuan</label>
+
+<!-- checkbox -->
+<label><input type="checkbox" name="hobi" value="musik" />Tidur</label>
+<label><input type="checkbox" name="hobi" value="olahraga" />Olahraga</label>
+<label><input type="checkbox" name="hobi" value="membaca" />Makan</label>
+
+<!-- button -->
+<button type="submit">Kirim</button>
+<button type="button" onclick="alert('Halo!')">Klik Saya</button>
+
+<!-- File upload -->
+<form action="upload.php" method="post" enctype="multipart/form-data">
+  <label for="file">Pilih File:</label>
+  <input type="file" id="file" name="file" />
+  <button type="submit">Unggah</button>
+</form>
+
+<!-- Validasi Form -->
+<input type="text" name="username" required minlength="5" maxlength="20" />
+<input type="email" name="email" required />
+<input type="number" name="age" min="18" max="60" />
+<button type="submit">Kirim</button>
+</body>
+</html>
